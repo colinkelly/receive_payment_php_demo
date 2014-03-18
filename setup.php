@@ -30,7 +30,7 @@ if (!$result) {
     die(__LINE__ . ' Invalid query: ' . mysql_error());
 }
 
-$result = mysql_query('CREATE TABLE IF NOT EXISTS pending_invoice_payments (transaction_hash CHAR(64), value DOUBLE, invoice_id INTEGER, PRIMARY KEY (transaction_hash))');
+$result = mysql_query('CREATE TABLE IF NOT EXISTS pending_invoice_payments (transaction_hash CHAR(64), value DOUBLE, invoice_id INTEGER, confirmations INTEGER, PRIMARY KEY (transaction_hash))');
   
 if (!$result) {
     die(__LINE__ . ' Invalid query: ' . mysql_error());
