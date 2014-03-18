@@ -39,9 +39,9 @@ if ($_GET['confirmations'] >= 4) {
 } else {
    //Waiting for confirmations
    //create a pending payment entry
-   mysql_query("replace INTO pending_invoice_payments (invoice_id, transaction_hash, value) values($invoice_id, '$transaction_hash', $value_in_btc)");
+mysql_query("replace INTO pending_invoice_payments (invoice_id, transaction_hash, value, confirmations) values($invoice_id, '$transaction_hash', $value_in_btc, $confirmations)");
 
-   echo $_GET['confirmations'];
+   echo "waiting for confirmations";
 }
 
 ?>
